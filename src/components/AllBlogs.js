@@ -1,22 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/AllBlogs.css';
 
 const AllBlogs = () => {
-  // Sample blog data
-  const blogs = [
-    {
-      id: '1',
-      title: 'First Blog Post',
-      shortDescription: 'This is a brief description of the first blog post.',
-    },
-    {
-      id: '2',
-      title: 'Second Blog Post',
-      shortDescription: 'This is a brief description of the second blog post.',
-    },
-    // Add more blog posts as needed
-  ];
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/blogs'); // Update with your API endpoint
+        setBlogs(response.data);
+      } catch (err) {
+        setError('Error fetching blogs');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <div className="all-blogs container my-5">

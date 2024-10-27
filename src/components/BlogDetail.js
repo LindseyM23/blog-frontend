@@ -1,37 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/BlogDetail.css';
-
-// Sample blog data for demonstration
-const blogs = [
-  {
-    id: '1',
-    title: 'First Blog Post',
-    author: 'John Doe',
-    date: '2024-10-01',
-    shortDescription: 'This is a brief description of the first blog post.',
-    image: 'https://via.placeholder.com/600x300',
-    content: 'This is the full content of the first blog post. It contains detailed information about the topic.',
-  },
-  {
-    id: '2',
-    title: 'Second Blog Post',
-    author: 'Jane Smith',
-    date: '2024-10-10',
-    shortDescription: 'This is a brief description of the second blog post.',
-    image: 'https://via.placeholder.com/600x300',
-    content: 'This is the full content of the second blog post. It contains detailed information about the topic.',
-  },
-  // Add more blog posts as needed
-];
 
 const BlogDetail = () => {
   const { id } = useParams();
-  const blog = blogs.find((b) => b.id === id);
+  const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-  if (!blog) {
-    return <h2>Blog not found!</h2>;
-  }
+  useEffect(() => {
+    const fetchBlog = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/api/blogs/${id}`); // Update with your API endpoint
+        setBlog(response.data);
+      } catch (err) {
+        setError('Blog not found!');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlog();
+  }, [id]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <div className="blog-detail container my-5">
