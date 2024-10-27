@@ -1,0 +1,50 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  transition: background-color 0.5s ease;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
+/* Hover Effects */
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Button Animations */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #007BFF !important;
+  color: white;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    text-align: center;
+  }
+}
+ 
+.register {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
