@@ -1,49 +1,81 @@
-/* Global Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  transition: background-color 0.5s ease;
-}
-
-/* Footer Styles */
-.footer {
-  background-color: #333;
-  color: white;
-  transition: background-color 0.5s ease;
-}
-
-/* Hover Effects */
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-/* Button Animations */
-.btn {
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #007BFF !important;
-  color: white;
-}
-
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-  .navbar {
-    text-align: center;
-  }
-}
-
 .all-blogs {
-  animation: fadeIn 0.5s ease-in-out;
+  margin-top: 50px;
+}
+
+h2 {
+  color: #F94892; 
+  font-size: 2.5rem; 
+  margin-bottom: 30px; 
 }
 
 .card {
-  transition: transform 0.3s ease;
+  border: none; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s; 
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); 
 }
+
+.card-title {
+  color: #333; 
+  font-size: 1.5rem; 
+  margin-bottom: 10px; 
+}
+
+.card-text {
+  color: #666; 
+  font-size: 1rem; 
+  margin-bottom: 20px; 
+}
+
+.btn-primary {
+  background-color: #F94892; 
+  border: none; 
+  padding: 10px 20px; 
+  font-size: 1rem; 
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
+}
+
+.btn-primary:hover {
+  background-color: #FF7F3F;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+.row {
+  display: flex; 
+  flex-wrap: wrap; 
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem; 
+}
+
+button.btn {
+  margin-top: 20px; 
+  background-color: #F94892;
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  font-size: 1rem; 
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
+}
+
+button.btn:hover {
+  background-color: #FF7F3F; 
+}
+
+
+.loading, .error {
+  text-align: center; 
+  font-size: 1.5rem; 
+  color: #F94892; 
+}
+

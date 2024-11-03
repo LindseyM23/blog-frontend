@@ -44,6 +44,7 @@ const AllBlogs = () => {
           </div>
         ))}
       </div>
+      <Link to="/create-blog"><button className='btn' >Create New Blog</button></Link>
     </div>
   );
 };

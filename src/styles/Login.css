@@ -1,41 +1,70 @@
-/* Global Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  transition: background-color 0.5s ease;
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* Full height */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://source.unsplash.com/1600x900/?abstract,blur");
+  background-size: cover;
+  padding: 20px;
 }
 
-/* Footer Styles */
-.footer {
-  background-color: #333;
+.login-title {
+  color: #F94892;
+  margin-bottom: 20px;
+}
+.login-form-control::placeholder {
+  color: white; 
+  
+}
+
+.login-alert {
+  margin-bottom: 20px;
+  color: blue; 
+}
+
+.login-form {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 300px; /* Fixed width for the form */
+}
+
+.login-form-control {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  color: #333;
+  width: 100%;
+}
+
+.login-btn {
+  background-color: #F94892;
   color: white;
-  transition: background-color 0.5s ease;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-/* Hover Effects */
-.nav-link:hover {
-  text-decoration: underline;
+.login-btn:hover {
+  background-color: #FF7F3F;
 }
 
-/* Button Animations */
-.btn {
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s ease;
+.login-register {
+  margin-top: 20px;
 }
 
-.btn:hover {
-  background-color: #007BFF !important;
+.login-register-btn {
+  background-color: #6c757d; 
   color: white;
+  border-radius: 5px;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-  .navbar {
-    text-align: center;
-  }
-}
-
-.login {
-  animation: fadeIn 0.5s ease-in-out;
+.login-register-btn:hover {
+  background-color: #5a6268; 
 }

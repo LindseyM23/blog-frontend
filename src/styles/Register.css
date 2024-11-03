@@ -1,50 +1,53 @@
-/* Global Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  transition: background-color 0.5s ease;
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* Full height */
+  
+  background-size: cover;
+  padding: 20px;
 }
 
-/* Footer Styles */
-.footer {
-  background-color: #333;
+.register-title {
+  color: #F94892;
+  margin-bottom: 20px;
+}
+
+.register-alert {
+  margin-bottom: 20px;
+  color: blue; 
+}
+
+.register-form {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 300px; 
+}
+
+.register-form-control {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  color: #333;
+  width: 100%;
+}
+
+.register-btn {
+  background-color: #F94892;
   color: white;
-  transition: background-color 0.5s ease;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: auto; 
 }
 
-/* Hover Effects */
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-/* Button Animations */
-.btn {
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #007BFF !important;
-  color: white;
-}
-
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-  .navbar {
-    text-align: center;
-  }
-}
- 
-.register {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.register-btn:hover {
+  background-color: #FF7F3F; 
 }
